@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+
+/*ヘッダー（サイト名ロゴが入ったブロック）
+---------------------------------------------------------------------------*/
+/*ヘッダーブロックの中*/
+header .inner {
+	width: auto;
+	height: auto;
+	text-align: center;
+}
+/*h1ロゴの設定*/
+header .inner h1 {
+	position: static;
+	padding-top: 20px;
+}
+/*電話番号ボックスの設定*/
+header .inner address {
+	position: static;
+	padding-bottom: 20px;
+}
+
+/*上部のメインメニュー
+---------------------------------------------------------------------------*/
+/*メニューブロック設定*/
+nav#menu {
+	height: auto;
+	margin: 6px 6px 0px;
+}
+nav#menu ul {
+	width: auto;
+}
+/*メニュー１個ごとの設定*/
+nav#menu ul li {
+	width: 50%;	/*メニュー幅*/
+	border: none !important;
+	background-color: #0d0d0d;	/*背景色（古いブラウザだとここの色のみが出ます）*/
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#c0c0c0), to(#0d0d0d));	/*グラデーション*/
+	background-image: -webkit-linear-gradient(#c0c0c0, #444444 49%, #1a1a1a 50%, #0d0d0d);	/*同上*/
+	background-image: linear-gradient(#c0c0c0, #444444 49%, #1a1a1a 50%, #0d0d0d);			/*同上*/
+	-webkit-box-shadow: 0px 0px 30px #363636;	/*影の設定。右・下・ぼかし幅・色を設定*/
+	box-shadow: 0px 0px 30px #363636;			/*同上*/
+	margin-bottom: 1%;
+}
+/*奇数番目のメニューの設定*/
+nav#menu ul li:nth-child(odd) {
+	width: 49%;	/*メニュー幅*/
+	margin-right: 1%;
+}
+/*最後のメニューの設定*/
+nav#menu ul li:last-child {
+	margin-bottom: 30px;
+}
+
+/*コンテンツ（main,sub,sideを囲むブロック）
+---------------------------------------------------------------------------*/
+#contents {
+	width: auto;
+	margin-right: 6px;
+	margin-left: 6px;
+}
+/*トップページでのコンテンツブロック設定*/
+body#top #contents {
+	margin: 0px 6px 0px;
+}
+
+/*contents-in,main,subコンテンツ
+---------------------------------------------------------------------------*/
+#contents-in, #main, body.c2 #main, #sub {
+	float: none;
+	width: auto;
+}
+
+/*sideコンテンツ
+---------------------------------------------------------------------------*/
+#side {
+	display: none;	/*表示させない設定*/
+}
+
+/*スタッフサムネイルボックス
+---------------------------------------------------------------------------*/
+/*ボックス１個あたりの設定*/
+#main .list section {
+	width: 24%;			/*ボックス幅*/
+	margin-left: 1%;	/*ボックスの左右間の余白*/
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+#main .list section a {
+	width: 100%;
+	height: 270px;	/*ボックスの高さ*/
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+/*写真の設定*/
+#main .list section figure img {
+	width: 100%;
+	height: auto;
+}
+
+/*スタッフ詳細ページ　staff.html
+---------------------------------------------------------------------------*/
+/*左側ボックス*/
+#main .staff .left {
+	width: 33%;
+}
+#main .staff .left figure img {
+	width: 100%;
+	height: auto;
+}
+/*右側ボックス*/
+#main .staff .right {
+	width: 65%;	/*幅*/
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+/*<body class="s-n">指定の場合にsubブロックも表示させない設定*/
+body.s-n #sub {
+	display: none;
+}
+/*幅一杯に画像を表示させる*/
+img.wa {
+	height: auto;
+	width: 100%;
+}
+/*メニューアイコンを非表示に*/
+#menubar_hdr {
+	display: none;
+}

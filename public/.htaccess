@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+	<IfModule mod_negotiation.c>
+    	Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # 最後がスラッシュのURLでアクセスされた場合のリダイレクト
+	RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+	# フロントコントローラーへの処理
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+
+
+php_value memory_limit 2G
+php_value upload_max_filesize 2G
+php_value post_max_size 2G
+php_value default_charset "UTF-8"
+php_flag mbstring.encoding_translation off

@@ -1,0 +1,93 @@
+@charset "shift_jis";
+
+
+/*全体の設定
+---------------------------------------------------------------------------*/
+body {
+	color: #FFF;	/*全体の文字色*/
+	margin: 0px;
+	padding: 0px;
+	font: 14px/2 "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+	background-image: url(../images/bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: #000;
+}
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure{
+	margin: 0px;
+	padding: 0px;
+}
+ul{
+	list-style-type: none;
+}
+img {
+	border: none;
+	vertical-align: bottom;
+}
+input,textarea,select {
+	font-size: 1em;
+}
+form {
+	margin: 0px;
+}
+table {
+	border-collapse:collapse;
+	font-size: 100%;
+	border-spacing: 0;
+}
+
+/*リンク（全般）設定
+---------------------------------------------------------------------------*/
+a {
+	color: #FFF;	/*リンクテキストの色*/
+}
+a:hover {
+	color: #0d0d0d;			/*マウスオン時の文字色（全体）*/
+	text-decoration: none;	/*マウスオン時に下線を消す設定。残したいならこの１行削除。*/
+}
+
+/*enterブロック設定
+---------------------------------------------------------------------------*/
+#enter {
+	margin: 0px auto;
+	width: 700px;	/*ブロック幅*/
+	text-align: center;
+}
+
+/*ロゴ
+---------------------------------------------------------------------------*/
+#logo {
+	padding: 100px 0px 50px;
+}
+
+/*h1タグ
+---------------------------------------------------------------------------*/
+h1 {
+	letter-spacing: 0.2em;	/*文字間隔を少し広げる設定*/
+	border-radius: 10px;	/*角丸のサイズ*/
+	background-color: #000;	/*背景色（古いブラウザだとここの色のみが出ます）*/
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#222), to(#000));	/*グラデーション*/
+	background-image: -webkit-linear-gradient(#222, #000);	/*同上*/
+	background-image: linear-gradient(#222, #000);			/*同上*/
+	font-size: 100%;
+	border: 1px solid #FFF;	/*枠線の幅、線種、色*/
+	color: #FFF;	/*文字色*/
+	margin: 0px 0px 20px;
+	line-height: 40px;
+}
+
+/*ENTERとLEAVEのボタンのブロック
+---------------------------------------------------------------------------*/
+#enterbtn {
+	padding: 50px 0px;
+}
+
+/*footer
+---------------------------------------------------------------------------*/
+footer .pr {
+	display: block;
+	font-size: 80%;
+}
+footer a {
+	text-decoration: none;
+}
