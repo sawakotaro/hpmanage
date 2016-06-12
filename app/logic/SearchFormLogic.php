@@ -153,17 +153,28 @@ class SearchFormLogic {
         return $data;
     }
     
-    
+    /**
+     * サーチフォームIDから、検索結果の配列を取得します。
+     * @param type SearchFormID
+     * @param type ページ数
+     * @return 検索結果配列
+     */
     public function search($id, $page) {
         $search_form = $this->searchFormService->findById($id);
+        // jsonデータをデコードする
         $decode_data = ConvertUtil::stdClassToArray(json_decode($search_form->data));
+        // Where句を生成する
         $this->makeWhereParameter($decode_data);
-        $data = $this->userService->findByQuery($this->search_where, $this->search_param);
-        echo $this->search_where . PHP_EOL;
-        var_dump($decode_data);
-        print_r($this->search_param);
-        print_r($data);
-        exit;
+        // offsetを求める
+        $offset = $page <= 1 ? 0 : ($page - 1) * $decode_data['limit'];
+        // 検索結果の取得
+        $user_list = $this->userService->findByQuery($this->search_where, $this->search_param, $decode_data['limit'], $offset);
+        $data['user_list'] = ConvertUtil::stdClassToArray($user_list);
+        
+        // ページャーの取得
+        
+        
+        return $data;
     }
     
     

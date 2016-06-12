@@ -83,6 +83,10 @@ div.container {
     color: hotpink;
 }
 
+.unknown {
+    color: #5d6d7e;
+}
+
 .formal {
     color: #32cd32;
 }

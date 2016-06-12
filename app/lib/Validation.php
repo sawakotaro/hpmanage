@@ -63,7 +63,8 @@ class Validation {
         if($parameters['id'] !== false) {
             $exclusion['id'] = "," . $parameters['id'];
         }
-        if(($parameters['id'] !== false && $parameters['is_edit_password']) || $parameters['id'] === false) {
+        
+        if((($parameters['id'] !== false && $parameters['is_edit_password'])) || ($parameters['id'] === false || empty($parameters['id']))) {
             $passwordValidate = array('required', 'regex:/^\w{8,32}$/');
         }
         
