@@ -65,6 +65,10 @@ class EntryController extends \BaseController {
         return View::make("admin.user.entry.confirm");
     }
     
+    /**
+     * 会員登録フォームデータをデータベースに登録し、完了ページへリダイレクトします。
+     * @return コンテンツ
+     */
     public function postRegister() {
         Input::merge(Input::old());
         $param = Input::get('id') ? "/" . Input::get('id') : "";

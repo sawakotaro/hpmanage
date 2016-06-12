@@ -84,7 +84,31 @@ class UserService {
     
     
     
-    public function findByQuery($where, Array $params) {
+    /**
+     * offsetの位置からlimit件数分、会員検索値を元にデータを取得します。
+     * @param String $where  生成済みWhere句
+     * @param array $params パラメータの配列
+     * @param integer $limit 取得件数
+     * @param integer $offset 開始位置
+     * @return エンティティのリスト
+     */
+    public function findByQuery($where, Array $params, $limit, $offset) {
+        return DB::table("users as u")
+                ->join("users_authorizations as ua", "u.id", "=", "ua.user_id")
+                ->join("users_scores as s", "u.id", "=", "s.user_id")
+                ->whereRaw($where, $params)
+                ->skip($offset)
+                ->take($limit)
+                ->get();
+    }
+    
+    /**
+     * limit, offsetのない検索パラメータに該当する全てのデータを取得します。
+     * @param String $where 生成済みWhere句
+     * @param array $params パラメータの配列
+     * @return エンティティのリスト
+     */
+    public function findAllByQuery($where, Array $params) {
         return DB::table("users as u")
                 ->join("users_authorizations as ua", "u.id", "=", "ua.user_id")
                 ->join("users_scores as s", "u.id", "=", "s.user_id")
